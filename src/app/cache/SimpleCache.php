@@ -26,10 +26,10 @@ class SimpleCache implements Cache
      * @param mixed $value
      * @return mixed
      */
-    public function set(string $key, mixed $value): bool
+    public function set(string $key, mixed $value): mixed
     {
         $this->data[$key] = $value;
-        return true;
+        return $value;
     }
 
     /**

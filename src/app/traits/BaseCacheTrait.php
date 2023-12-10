@@ -2,7 +2,7 @@
 
 namespace App\traits;
 
-trait BaseCache
+trait BaseCacheTrait
 {
     /**
      * A key to use to distinguish a different cache key in the same business

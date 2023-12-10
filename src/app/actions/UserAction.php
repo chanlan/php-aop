@@ -4,13 +4,14 @@ namespace App\actions;
 
 use App\aop\annotations\Cache;
 use App\model\User;
-use App\traits\AddCache;
+use App\traits\CacheTrait;
 
 class UserAction
 {
-    use AddCache;
+    use CacheTrait;
 
     /**
+     * add a user
      * @param User $user
      * @return mixed
      */
@@ -19,5 +20,17 @@ class UserAction
     {
         $this->key = $user->getUserId();
         return $user;
+    }
+
+    /**
+     * delete a user
+     * @param string $userId
+     * @return bool
+     */
+    #[Cache("__cache_user__")]
+    public function __delUser__(string $userId): bool
+    {
+        $this->key = $userId;
+        return true;
     }
 }

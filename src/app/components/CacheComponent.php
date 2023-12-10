@@ -34,7 +34,7 @@ class CacheComponent
      */
     public function add($key, $value): mixed
     {
-        return $this->instance->set($this->prefix.$key, $value);
+        return $this->instance->set($this->prefix . $key, $value);
     }
 
     /**
